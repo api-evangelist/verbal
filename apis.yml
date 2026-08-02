@@ -1,7 +1,25 @@
 aid: verbal
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/verbal.png
 name: Verbal
-description: Verbal is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Verbal (tryverbal.com) is an AI-powered clinical compliance and quality-assurance
+  platform for healthcare organizations. It automatically audits patient interactions
+  — phone and video calls, telehealth visits, AI-agent conversations, and clinical
+  chart notes — against customizable regulatory and quality checklists, scoring compliance
+  in real time and surfacing gaps for supervisors and QA teams. Verbal integrates with
+  communications and EHR platforms including Zoom, Five9, Epic, and Athena. As of this
+  enrichment pass the company publishes a marketing site and customer app but no public
+  developer API, documentation, or developer portal. Backed by 500 Global.
 url: https://raw.githubusercontent.com/api-evangelist/verbal/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +29,15 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Healthcare
+- Compliance
+- Artificial Intelligence
+- Quality Assurance
+- Clinical Documentation
+- Conversation Intelligence
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +47,20 @@ maintainers:
 common:
 - type: Website
   url: https://tryverbal.com
+- type: Blog
+  url: https://tryverbal.com/blog
+- type: Login
+  url: https://app.tryverbal.com
+- type: SignUp
+  url: https://tryverbal.com/demo
+- type: PrivacyPolicy
+  url: https://tryverbal.com/privacy-policy
+- type: TermsOfService
+  url: https://tryverbal.com/terms-and-conditions
+- type: DomainSecurity
+  url: security/verbal-domain-security.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
