@@ -12,14 +12,19 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/verbal.png
 name: Verbal
-description: Verbal (tryverbal.com) is an AI-powered clinical compliance and quality-assurance
-  platform for healthcare organizations. It automatically audits patient interactions
-  — phone and video calls, telehealth visits, AI-agent conversations, and clinical
-  chart notes — against customizable regulatory and quality checklists, scoring compliance
-  in real time and surfacing gaps for supervisors and QA teams. Verbal integrates with
-  communications and EHR platforms including Zoom, Five9, Epic, and Athena. As of this
-  enrichment pass the company publishes a marketing site and customer app but no public
-  developer API, documentation, or developer portal. Backed by 500 Global.
+description: Verbal (tryverbal.com), from Salusive Health, is an AI-powered clinical
+  compliance and quality-assurance platform for healthcare organizations. It automatically
+  audits patient interactions — phone and video calls, telehealth visits, AI-agent
+  conversations, and clinical chart notes — against customizable regulatory and quality
+  checklists, scoring compliance in real time and surfacing gaps for supervisors and QA
+  teams. Verbal connects to communications and EHR platforms including RingCentral, NICE,
+  Zoom, Five9, Healthie, Epic, and Athena, and ships a Chrome extension for clinicians. It
+  publishes a healthcare compliance posture — HIPAA compliant, HITRUST certified, CPRA,
+  BAAs with all customers, PII redaction and US data residency. As of this enrichment pass
+  the company exposes no public developer API — the API language on its site describes
+  Verbal consuming partner platform APIs, not an API it publishes, and there is no
+  developer portal, reference, machine-readable spec, or SDK on any Verbal host. Backed by
+  500 Global.
 url: https://raw.githubusercontent.com/api-evangelist/verbal/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -59,8 +64,35 @@ common:
   url: https://tryverbal.com/terms-and-conditions
 - type: DomainSecurity
   url: security/verbal-domain-security.yml
+- type: GitHubOrganization
+  url: https://github.com/Salusive
+- type: Compliance
+  url: https://www.tryverbal.com/features/secure-hipaa-compliant
+- type: Conformance
+  url: conformance/verbal-conformance.yml
+- type: LLMsTxt
+  url: llms/verbal-llms.txt
 x-enrichment:
-  date: '2026-07-21'
+  date: '2026-08-14'
   status: minimal
-  artifacts_added: 1
+  artifacts_added: 6
   pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Verbal ships only an end-user SaaS app and a Chrome extension; the "simple API
+    connection" language on its integrations pages is Verbal calling RingCentral, NICE and
+    Healthie, and its own app backend (svc-amd.app.tryverbal.com, FastAPI) has /docs,
+    /redoc and /openapi.json all disabled behind a CORS allow-list pinned to
+    app.tryverbal.com.
+  evidence:
+  - url: https://www.tryverbal.com/developers
+    status: 404
+  - url: https://www.tryverbal.com/docs
+    status: 404
+  - url: https://svc-amd.app.tryverbal.com/openapi.json
+    status: 404
+  - url: https://svc-amd.app.tryverbal.com/health
+    status: 200
+  checked: '2026-08-14'
