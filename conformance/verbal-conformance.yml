@@ -1,0 +1,56 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.tryverbal.com/features/secure-hipaa-compliant
+note: >-
+  Verbal publishes a healthcare security and compliance posture on its own site, but no
+  API contract, so every API-level standard below is unassertable rather than failed.
+  Compliance claims are recorded verbatim from the provider's page; no certificate,
+  report, or trust center is published to corroborate them.
+standards:
+- id: hipaa
+  conforms: true
+  evidence: >-
+    "Verbal is HIPAA-compliant and follows industry best practices to ensure
+    confidentiality, integrity, and availability." — tryverbal.com/features/secure-hipaa-compliant
+  published_by: provider
+- id: hitrust
+  conforms: true
+  evidence: >-
+    "Verbal is HITRUST certified—one of the most rigorous security frameworks in
+    healthcare." — tryverbal.com/features/secure-hipaa-compliant. Certification ID and
+    assessor are not published.
+  published_by: provider
+- id: cpra
+  conforms: true
+  evidence: CPRA badge displayed in the site footer alongside HIPAA and HITRUST.
+  published_by: provider
+- id: baa
+  conforms: true
+  evidence: '"We sign Business Associate Agreements (BAAs) with all our customers."'
+  published_by: provider
+- id: soc2
+  conforms: unknown
+  evidence: >-
+    The page says Verbal "regularly undergo comprehensive third-party audits" but never
+    names SOC 2 and links no report. Not claimed, not denied.
+- id: oauth2
+  conforms: unknown
+  evidence: No public API or securityScheme to assert against.
+- id: oidc
+  conforms: unknown
+  evidence: /.well-known/openid-configuration 404s on every Verbal host.
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: No public OpenAPI; the one reachable backend route returns a bare {"detail":...} body.
+- id: fhir-r4
+  conforms: unknown
+  evidence: >-
+    Verbal integrates with Epic, Athena and Healthie as a consumer of their EHR APIs, but
+    publishes no FHIR conformance statement of its own.
+security_practices:
+  encryption_at_rest: true
+  encryption_in_transit: true
+  pii_redaction: true
+  penetration_testing: true
+  data_residency: United States
+  source: https://www.tryverbal.com/features/secure-hipaa-compliant

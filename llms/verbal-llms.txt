@@ -1,0 +1,64 @@
+# Verbal
+
+> Verbal (tryverbal.com), from Salusive Health, is an AI clinical compliance and quality-assurance
+> platform for healthcare organizations. It audits patient interactions — phone and video calls,
+> telehealth visits, AI-agent conversations and clinical chart notes — against customizable
+> regulatory and quality checklists, scoring compliance and surfacing gaps for supervisors and QA
+> teams. As of 2026-08-14 Verbal publishes NO public developer API, no OpenAPI or other
+> machine-readable contract, no developer portal and no SDK. Its "API" language on the marketing
+> site refers to Verbal consuming partner platform APIs, not to an API Verbal exposes.
+
+## Product
+
+- [Product overview](https://www.tryverbal.com/product-overview): what the platform does end to end.
+- [Call audits](https://www.tryverbal.com/features/call-audits): automated QA on 100% of calls.
+- [Chart note audits](https://www.tryverbal.com/features/chart-note-audits): clinical documentation review.
+- [Patient insights](https://www.tryverbal.com/features/patient-insights): analysis across patient conversations.
+- [Conversational analysis](https://www.tryverbal.com/features/conversational-analysis): conversation intelligence.
+- [Analytics and reporting](https://www.tryverbal.com/features/analytics-reporting): QA and compliance reporting.
+- [AI agent developers](https://www.tryverbal.com/features/ai-agent-developers): QA for AI-agent conversations — a product page, not a developer reference.
+
+## Integrations
+
+Verbal connects to these platforms as a client of their APIs. None of these pages documents a Verbal API.
+
+- [All integrations](https://www.tryverbal.com/integrations)
+- [RingCentral](https://www.tryverbal.com/integrations/ringcentral)
+- [Healthie](https://www.tryverbal.com/integrations/healthie)
+- [Chrome extension](https://www.tryverbal.com/integrations/chrome-extension)
+- [Chrome Web Store listing](https://chromewebstore.google.com/detail/verbal/bdneobnjhgednodmmclilkohakeieilm)
+
+Also named on the integrations surface: NICE, Zoom, Five9, Epic, Athena.
+
+## Security and compliance
+
+- [Secure and HIPAA compliant](https://www.tryverbal.com/features/secure-hipaa-compliant): HIPAA compliant, HITRUST certified, CPRA, BAAs signed with all customers, encryption at rest and in transit, PII redaction from transcripts, regular penetration testing, US data residency.
+
+## Company
+
+- [Website](https://www.tryverbal.com)
+- [Blog](https://www.tryverbal.com/blog)
+- [Case studies](https://www.tryverbal.com/case-studies)
+- [Log in](https://app.tryverbal.com)
+- [Request a demo](https://www.tryverbal.com/demo) — the only commercial entry point; no pricing is published.
+- [Privacy policy](https://www.tryverbal.com/privacy-policy)
+- [Terms and conditions](https://www.tryverbal.com/terms-and-conditions)
+- [GitHub organization](https://github.com/Salusive) — 0 public repositories.
+- Backed by 500 Global. Legal entity: Salusive Health, Inc. (Emeryville, CA), formerly myNurse.ai.
+
+## What agents should know
+
+- There is no Verbal API to call. No OpenAPI, AsyncAPI, GraphQL SDL, MCP server, A2A agent card, llms.txt or Postman collection is published on any Verbal host.
+- Every /.well-known/ path 404s on the marketing host and on the application backend. The customer app host (app.tryverbal.com) answers HTTP 200 with an SPA shell for every path — those 200s are HTML, not documents, and must not be read as discovery hits.
+- Access to Verbal is via the customer application (https://app.tryverbal.com) after a sales conversation, or via the Chrome extension.
+- API Evangelist profile: https://apis.io/provider/verbal
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/verbal/refs/heads/main/apis.yml)
+- [Conformance and compliance](https://raw.githubusercontent.com/api-evangelist/verbal/refs/heads/main/conformance/verbal-conformance.yml)
+- [Well-known probe](https://raw.githubusercontent.com/api-evangelist/verbal/refs/heads/main/well-known/verbal-well-known.yml)
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/verbal/refs/heads/main/security/verbal-domain-security.yml)
+- [Packages](https://raw.githubusercontent.com/api-evangelist/verbal/refs/heads/main/packages/verbal-packages.yml)
+- [Plans and pricing](https://raw.githubusercontent.com/api-evangelist/verbal/refs/heads/main/plans/verbal-plans-pricing.yml)
+- [Rate limits](https://raw.githubusercontent.com/api-evangelist/verbal/refs/heads/main/rate-limits/verbal-rate-limits.yml)

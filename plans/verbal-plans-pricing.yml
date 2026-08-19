@@ -1,0 +1,19 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.tryverbal.com/
+note: >-
+  Verbal publishes no pricing at all. There is no pricing page in the navigation or the
+  footer, and https://www.tryverbal.com/pricing returns 404. The only commercial entry
+  point is a demo request form (https://www.tryverbal.com/demo, HTTP 200), so pricing is
+  a sales conversation. No Pricing pointer is emitted — there is no page to point at.
+plan_count: 0
+plans: []
+commercial_entry:
+  type: demo-request
+  url: https://www.tryverbal.com/demo
+  status: 200
+evidence:
+- url: https://www.tryverbal.com/pricing
+  status: 404
+- url: https://www.tryverbal.com/demo
+  status: 200

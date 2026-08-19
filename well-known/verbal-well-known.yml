@@ -1,0 +1,100 @@
+generated: '2026-08-14'
+method: probed
+source: live HTTP probes of every Verbal host found in apis.yml and in the app bundle
+note: >-
+  Every /.well-known/ path probed on all three Verbal hosts missed. The marketing host
+  (Webflow) answers 404 with an "Invalid .well-known request" page. The customer app host
+  (app.tryverbal.com, a CloudFront/Vite SPA) answers HTTP 200 with the same 8,622-byte
+  SPA shell for EVERY path including nonsense ones, so its 200s are catch-all HTML and
+  NOT documents — they are recorded as misses. The application backend
+  (svc-amd.app.tryverbal.com, uvicorn/FastAPI) answers a JSON 404 on every well-known
+  path. No WellKnown or SecurityTxt pointer is emitted: nothing here is a served document.
+hosts:
+- host: https://www.tryverbal.com
+  role: marketing site (Webflow)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /robots.txt
+    status: 200
+    content_type: text/plain
+    bytes: 0
+    note: served but empty — zero directives
+- host: https://app.tryverbal.com
+  role: customer application (CloudFront + Vite SPA)
+  spa_catch_all: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    result: miss
+    note: SPA HTML shell, not a document
+  - path: /.well-known/openid-configuration
+    status: 200
+    result: miss
+    note: SPA HTML shell, not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    result: miss
+    note: SPA HTML shell, not a document
+  - path: /.well-known/api-catalog
+    status: 200
+    result: miss
+    note: SPA HTML shell, not a document
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    result: miss
+    note: SPA HTML shell, not a document
+  - path: /.well-known/agent-card.json
+    status: 200
+    result: miss
+    note: SPA HTML shell, not a document — rejected per the A2A probe rule
+  - path: /.well-known/agent.json
+    status: 200
+    result: miss
+    note: SPA HTML shell, not a document — rejected per the A2A probe rule
+  - path: /llms.txt
+    status: 200
+    result: miss
+    note: SPA HTML shell, not a document
+- host: https://svc-amd.app.tryverbal.com
+  role: application backend microservice (uvicorn/FastAPI, "svc-advancemd" 0.1.0)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /health
+    status: 200
+    content_type: application/json
+    note: >-
+      Only responding route found. Returns {"status":"ok","service":"svc-advancemd",
+      "version":"0.1.0"}. This is an internal integration service for the customer app —
+      CORS is pinned to https://app.tryverbal.com and it expects access-token /
+      refresh-token / X-Selected-Organization-Id headers. FastAPI's /docs, /redoc and
+      /openapi.json are all disabled (404). Not a published developer API; recorded as
+      evidence only and deliberately NOT registered as an apis[] entry.
+summary:
+  hosts_probed: 3
+  paths_probed: 24
+  real_documents_found: 0
+  pointer_emitted: false

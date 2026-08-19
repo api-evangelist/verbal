@@ -1,0 +1,55 @@
+generated: '2026-08-14'
+method: searched
+source: >-
+  npm registry search, PyPI, GitHub org lookups, and the tryverbal.com integrations pages
+note: >-
+  No first-party client library exists in any public registry. Verbal ships no SDK because
+  it publishes no developer API — its integrations (RingCentral, NICE, Healthie, Zoom,
+  Epic, Athena, Five9) are Verbal CONSUMING those platforms' APIs, not Verbal exposing one.
+  The only publicly distributed Verbal artifact is an end-user Chrome extension, which is
+  an application rather than a client library, so it is recorded below as distribution
+  context and is NOT marked as an SDK. No SDKs pointer is emitted.
+package_count: 0
+packages: []
+registries_checked:
+- registry: npm
+  query: tryverbal
+  result: 0 packages
+  status: 200
+- registry: npm
+  query: verbal
+  result: no first-party match — the name collides with unrelated projects
+  status: 200
+- registry: pypi
+  package: tryverbal
+  url: https://pypi.org/pypi/tryverbal/json
+  status: 404
+- registry: github
+  org: tryverbal
+  status: 404
+- registry: github
+  org: Salusive
+  url: https://github.com/Salusive
+  status: 200
+  note: >-
+    The company's own org (display name "Verbal", created 2017, matching the Salusive
+    Health legal entity behind tryverbal.com) — 0 public repositories.
+- registry: github
+  org: verbal-ai
+  status: 200
+  note: >-
+    NOT this company. github.com/verbal-ai is an unrelated open-source Raspberry Pi voice
+    assistant project. Deliberately excluded to avoid a wrong-owner attribution.
+distribution:
+- kind: browser-extension
+  name: Verbal
+  store: Chrome Web Store
+  url: https://chromewebstore.google.com/detail/verbal/bdneobnjhgednodmmclilkohakeieilm
+  official: true
+  registry: cdn
+  version: null
+  published: null
+  note: >-
+    End-user Chrome extension, not a developer SDK. The Chrome Web Store exposes no
+    unauthenticated metadata endpoint for version/date, so both fields are recorded as
+    null — checked, nothing publishable to record.

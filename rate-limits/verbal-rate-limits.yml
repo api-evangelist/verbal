@@ -1,0 +1,21 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.tryverbal.com/integrations
+note: >-
+  No rate limits are published because no developer API is published. Verbal's site
+  describes API CONNECTIONS TO partner platforms (RingCentral, NICE, Healthie) rather than
+  an API of its own, and there is no developer portal, reference, or docs host to carry
+  limits. The one reachable application backend route
+  (https://svc-amd.app.tryverbal.com/health) returns no RateLimit-*, X-RateLimit-* or
+  Retry-After headers. No RateLimits pointer is emitted — an honest zero, not a signal.
+limit_count: 0
+limits: []
+headers_observed: []
+evidence:
+- url: https://www.tryverbal.com/developers
+  status: 404
+- url: https://www.tryverbal.com/docs
+  status: 404
+- url: https://svc-amd.app.tryverbal.com/health
+  status: 200
+  note: no rate-limit response headers present
