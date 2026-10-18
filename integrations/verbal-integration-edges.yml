@@ -1,4 +1,24 @@
-edges: []
+edges:
+- partner_name: Zoom (own)
+  partner: zoom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.zoom.us/apps/1wNPByr2TZm5v8SDi1eI9g
+  mirror_of: zoom/integrations/zoom-integration-edges.yml
+  apps:
+  - Verbal
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Zoom app
 generated: '2026-10-12'
-method: none
-checked: []
+method: searched
+checked:
+- zoom/integrations/zoom-integration-edges.yml
+source:
+- zoom/integrations/zoom-integration-edges.yml
